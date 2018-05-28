@@ -1,0 +1,10 @@
+[Sun May 27 22:49:16.740964 2018] [authz_core:error] [pid 8752:tid 1960] [client 127.0.0.1:6156] AH01630: client denied by server configuration: C:/WEB/PHP/laravel/public/
+[Sun May 27 22:49:21.669847 2018] [authz_core:error] [pid 8752:tid 1960] [client 127.0.0.1:6156] AH01630: client denied by server configuration: C:/WEB/PHP/laravel/public/favicon.ico, referer: http://laravel.local/
+[Sun May 27 22:50:24.272070 2018] [authz_core:error] [pid 8752:tid 1960] [client 127.0.0.1:6180] AH01630: client denied by server configuration: C:/WEB/PHP/laravel/public/
+[Sun May 27 22:50:24.663981 2018] [authz_core:error] [pid 8752:tid 1960] [client 127.0.0.1:6180] AH01630: client denied by server configuration: C:/WEB/PHP/laravel/public/favicon.ico, referer: http://laravel.local/
+[Sun May 27 22:54:34.138263 2018] [authz_core:error] [pid 10228:tid 1968] [client 127.0.0.1:6344] AH01630: client denied by server configuration: C:/WEB/PHP/laravel/public/
+[Sun May 27 22:54:34.766986 2018] [authz_core:error] [pid 10228:tid 1968] [client 127.0.0.1:6347] AH01630: client denied by server configuration: C:/WEB/PHP/laravel/public/favicon.ico, referer: http://laravel.local/
+[Sun May 27 22:55:16.719382 2018] [authz_core:error] [pid 10228:tid 1972] [client 127.0.0.1:6363] AH01630: client denied by server configuration: C:/WEB/PHP/laravel/public/
+[Sun May 27 22:55:23.341152 2018] [authz_core:error] [pid 10228:tid 1968] [client 127.0.0.1:6364] AH01630: client denied by server configuration: C:/WEB/PHP/laravel/public/favicon.ico, referer: http://laravel.local/
+[Sun May 27 23:05:02.414108 2018] [authz_core:error] [pid 2116:tid 2004] [client 127.0.0.1:6737] AH01630: client denied by server configuration: C:/WEB/PHP/laravel/public/
+[Sun May 27 23:05:03.346276 2018] [authz_core:error] [pid 2116:tid 2004] [client 127.0.0.1:6737] AH01630: client denied by server configuration: C:/WEB/PHP/laravel/public/favicon.ico, referer: http://laravel.local/

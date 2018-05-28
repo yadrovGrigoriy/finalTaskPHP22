@@ -1,0 +1,7 @@
+127.0.0.1 - - [28/May/2018:00:08:27 +0700] "GET / HTTP/1.1" 403 1061 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"
+127.0.0.1 - - [28/May/2018:00:08:28 +0700] "GET /favicon.ico HTTP/1.1" 403 1047 "http://laravel.loc/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"
+127.0.0.1 - - [28/May/2018:00:19:58 +0700] "GET / HTTP/1.1" 403 1061 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"
+127.0.0.1 - - [28/May/2018:00:19:58 +0700] "GET /favicon.ico HTTP/1.1" 403 1047 "http://laravel.loc/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"
+127.0.0.1 - - [28/May/2018:00:20:18 +0700] "HEAD / HTTP/1.1" 403 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"
+127.0.0.1 - - [28/May/2018:00:20:38 +0700] "GET / HTTP/1.1" 403 1061 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"
+127.0.0.1 - - [28/May/2018:00:20:40 +0700] "GET /favicon.ico HTTP/1.1" 403 1047 "http://laravel.loc/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36"
