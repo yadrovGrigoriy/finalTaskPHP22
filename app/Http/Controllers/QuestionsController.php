@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Question;
+use App\Category;
 use Illuminate\Http\Request;
 //use Symfony\Component\Console\Question\Question;
 
@@ -17,8 +18,9 @@ class QuestionsController extends Controller
      */
     public function index()
     {
+      $categories = Category::all();
       $questions =  Question::all();
-      return view('index', compact('questions'));
+      return view('admin.questions.index', compact('questions', 'categories'));
 
     }
 
@@ -29,7 +31,8 @@ class QuestionsController extends Controller
      */
     public function create()
     {
-        return view('questions.create');
+        $categories = Category::all();
+         return view('admin.questions.create', compact('categories'));
     }
 
     /**
@@ -41,16 +44,16 @@ class QuestionsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'name' => 'required',
-            'category' => 'required',
-            'email' => 'required',
+            'user_name' => 'required',
+            'category_id',
+            'user_email' => 'required',
             'question' => 'required',
 
           ]);
 
       Question::create($request->all());
 
-        return redirect('/');
+        return redirect()->route('questions.index');
     }
 
     /**
@@ -72,8 +75,8 @@ class QuestionsController extends Controller
      */
     public function edit(Question $question)
     {
-
-        return view('questions.edit', compact('question'));
+        $categories = Category::all();
+        return view('admin.questions.edit', compact('question','categories'));
     }
 
     /**
@@ -85,12 +88,15 @@ class QuestionsController extends Controller
      */
     public function update(Request $request, Question $question)
     {
-        $this->validate($request, [
-          'category',
-          'question',
-        ]);
+      $this->validate($request,[
+        'user_name' => 'required',
+        'category_id',
+        'user_email' => 'required',
+        'question' => 'required',
+      ]);
+
         $question->update($request->all());
-        return redirect('/');
+        return redirect()->route('questions.index');
     }
 
     /**
@@ -102,6 +108,6 @@ class QuestionsController extends Controller
     public function destroy(Question $question)
     {
         $question->delete();
-        return redirect('/');
+        return redirect()->route('questions.index');
     }
 }

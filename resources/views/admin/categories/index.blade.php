@@ -7,16 +7,20 @@
 				<div class="panel panel-default">
 					<div class="panel-heading">Категории</div>
 					<div class="panel-body">
-						@if($questions->count() > 0)
+						@if($categories->count() > 0)
 							<table class="table">
-								@foreach($questions as $question)
-
-										<td>{{ $question->question }}</td>
-										<td>{{ $question->answer }}</td>
+								<tr>
+									<th>Категория</th>
+									<th>Колличество вопросов </th>
+									<th>Действия </th>
+								</tr>
+								@foreach($categories as $category)
+									<tr>
+										<td>{{ $category->category }}</td>
+										<td>{{ $category->questions->count() }}</td>
 										<td>
-											<form action="{{ route('questions.destroy', $question->id) }}" method="POST">
-												<a type="button" class="btn btn-pri" href="{{ route('questions.edit', $question->id) }}">Редактировать</a>
-
+											<form action="{{ route('categories.destroy', $category->id) }}" method="POST">
+												<a type="button" class="btn btn-pri" href="{{ route('categories.edit', $category->id) }}">Редактировать</a>
 												{{ method_field('DELETE') }}
 												{{ csrf_field() }}
 												<button type="submit" class="btn btn-danger">Удалить</button>
@@ -26,7 +30,7 @@
 								@endforeach
 							</table>
 						@else
-							No questions
+							No categories
 						@endif
 					</div>
 				</div>

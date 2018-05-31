@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'QA') }}</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -34,7 +34,20 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        &nbsp;<li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Вопросы <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ route('questions.index') }}">Список Вопросов</a></li>
+                                <li><a href="{{ route('questions.create') }}">Добавить Вопрос</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Категории <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ route('categories.index') }}">Список Ктегорий</a></li>
+                                <li><a href="{{ route('categories.create') }}">Добавить Категорию</a></li>
+                            </ul>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

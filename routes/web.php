@@ -1,4 +1,5 @@
 <?php
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -9,35 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
-
-
-
+  Route::get('/', 'PagesController@index');
   Auth::routes();
+
   Route::group(['middleware' => 'auth'], function() {
-    Route::get('/home', 'HomeController@index');
-    Route::resource('/admin/questions', 'AdminQuestionsController');
-    Route::resource('/admin/questions/store', 'AdminQuestionsController');
-    //Route::resource('/admin/questions/{question}/edit/', 'AdminQuestionsController');
-    Route::get('admin/questions/{question}/edit', 'AdminQuestionsController@edit');
-    Route::patch('admin/questions/{$question}', 'AdminQuestionsController@update');
-    // Route::resource('/admin/questions/{question}', 'AdminQuestionsController');
-    Route::delete('admin/questions/{question}', 'AdminQuestionsController@destroy');
-    route::resource('category', 'CategoryController');
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::resource('questions', 'QuestionsController');
+    Route::resource('categories', 'CategoriesController');
   });
-//    Route::get('/', 'QuestionsController@index');
-//    Route::get('/questions/create', 'QuestionsController@create');
-//    Route::post('/questions/store', 'QuestionsController@store');
-//    Route::get('/question/{question}/edit', 'QuestionsController@edit');
-//    Route::patch('/questions/{question}', 'QuestionsController@update');
-//    Route::delete('/questions/{question}', 'QuestionsController@destroy');
-//    Route::get('/{category}', 'CategoryController@index');
 
 
-
-  Route::get('/', 'QuestionsController@index');
-  Route::get('/questions/create', 'QuestionsController@create');
-  Route::post('/questions/store', 'QuestionsController@store');
-
-
+//  Route::get('/{category}', 'PagesController@category')->name('category');
+//  Route::get('/{category}/{post}', 'PagesController@post')->name('post');

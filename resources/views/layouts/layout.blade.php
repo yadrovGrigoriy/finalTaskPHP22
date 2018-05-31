@@ -34,8 +34,6 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">QA</a>
-
         </div>
 
 
@@ -43,12 +41,13 @@
             <ul class="nav navbar-nav">
 
                 @if (Route::has('login'))
-                       @auth
+                    @auth
+                    <li><a href="{{ route('login') }}">Войти</a></li>
+
                         @else
                             <li><a href="{{ route('login') }}">Войти</a></li>
                             <li><a href="{{ route('register') }}">Зарегистрироваться</a></li>
-                            @endauth
-
+                        @endauth
                 @endif
                 </ul>
         </div><!--/.nav-collapse -->
@@ -60,7 +59,7 @@
     <div class="container">
         <h1>QA</h1>
         <p>Здесь можно задать вопрос</p>
-        <button type="submit" class="btn btn-outline-primary"><a href="/questions/create">Добавить вопрос</a></button>
+        <button type="submit" class="btn btn-outline-primary"><a href="">Добавить вопрос</a></button>
     </div>
 </div>
 
