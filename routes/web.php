@@ -20,5 +20,3 @@
   });
 
 
-//  Route::get('/{category}', 'PagesController@category')->name('category');
-//  Route::get('/{category}/{post}', 'PagesController@post')->name('post');
