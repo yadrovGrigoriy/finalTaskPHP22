@@ -1,4 +1,4 @@
-@extends('admin.questions.index')
+@extends('layouts.layout')
 
 @section('content')
    <div class="row">

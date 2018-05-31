@@ -110,4 +110,6 @@ class QuestionsController extends Controller
         $question->delete();
         return redirect()->route('questions.index');
     }
+
+
 }

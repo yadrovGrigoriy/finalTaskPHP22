@@ -12,12 +12,14 @@
 								<tr>
 									<th>Категория</th>
 									<th>Колличество вопросов </th>
+									<th></th>
 									<th>Действия </th>
 								</tr>
 								@foreach($categories as $category)
 									<tr>
 										<td>{{ $category->category }}</td>
 										<td>{{ $category->questions->count() }}</td>
+										<td> {{$category->questions->count()}}</td>
 										<td>
 											<form action="{{ route('categories.destroy', $category->id) }}" method="POST">
 												<a type="button" class="btn btn-pri" href="{{ route('categories.edit', $category->id) }}">Редактировать</a>
