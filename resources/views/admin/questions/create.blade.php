@@ -39,12 +39,13 @@
         <div class="form-group">
             <button class="btn btn-primary" type="submit">Добавить</button>
         </div>
+    </form>
                 </div>
             </div>
         </div>
     </div>
 
-    </form>
+
 
         @include('layouts.error')
 

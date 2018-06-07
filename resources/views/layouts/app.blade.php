@@ -34,10 +34,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                         &nbsp;<div class="container">
-                              <p><a class="btn btn-primary" href="{{ route('questions.index') }}">Список Вопросов</a>
-                                 <a class="btn btn-primary" href="{{ route('categories.index') }}">Список Категорий</a></p>
-                              <p><a class="btn btn-primary" href="{{ route('categories.create') }}">Добавить Категорию</a>
-                              <a class="btn btn-primary" href="{{ route('questions.create') }}">Добавить Вопрос</a></p>
+                        <p><a class="btn btn-primary" href="{{ route(  'questions.index') }}">Список Вопросов</a></p>
+                        <p><a class="btn btn-primary" href="{{ route( 'categories.index') }}">Список Категорий</a></p>
+                        <p><a class="btn btn-primary" href="{{ route(      'users.index') }}">Список Пользователей</a></p>
+                        <p><a class="btn btn-primary" href="{{ route(     'users.create') }}">Добавить Пользователя</a></p>
+                        <p><a class="btn btn-primary" href="{{ route('categories.create') }}">Добавить Категорию</a></p>
+                        <p><a class="btn btn-primary" href="{{ route( 'questions.create') }}">Добавить Вопрос</a></p>
 
 
 
