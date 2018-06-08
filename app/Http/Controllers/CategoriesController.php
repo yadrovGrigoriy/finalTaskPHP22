@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Question;
 use Illuminate\Http\Request;
 
 class CategoriesController extends Controller
@@ -14,8 +15,9 @@ class CategoriesController extends Controller
      */
     public function index()
     {
+      $questions = Question::all();
       $categories = Category::all();
-      return view('admin.categories.index', compact('categories'));
+      return view('admin.categories.index', compact('categories', 'questions'));
     }
 
     /**
