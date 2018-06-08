@@ -38,8 +38,16 @@
                     </div>
                     <div class="form-group">
 
-                        <label>Ответ : <input class="form-control" type="text"  name="answer"></label>
+                        <label>Ответ : <input class="form-control" type="text"  name="answer" value="{{ $question->answer }}"></label>
+
+                        <label>Опубликовать: <input class="btn btn-group-justified" type="checkbox" value="1"  name="publish"></label>
+
+                        <label>Скрыть: <input class="btn btn-group-justified" type="checkbox" value="0"  name="publish"></label>
+
+
                     </div>
+
+
 
                     <div class="form-group">
                         <button class="btn btn-primary" type="submit">Сохранить </button>
