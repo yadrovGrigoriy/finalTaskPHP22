@@ -111,5 +111,8 @@ class QuestionsController extends Controller
         return redirect()->route('questions.index');
     }
 
-
+    public function sortByCategory(Category $category, Question $questions)
+    {
+      //
+    }
 }
