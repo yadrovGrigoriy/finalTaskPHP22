@@ -11,6 +11,7 @@ class Question extends Model
     'user_email',
     'question',
     'answer',
+    'publish',
     'category_id',
   ];
 
