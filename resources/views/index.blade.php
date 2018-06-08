@@ -1,24 +1,48 @@
-@extends('layouts.layout')
+@extends('layouts.app')
+
 
 @section('content')
-   <div class="row">
-        {{--@foreach($categories as $category)--}}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading"></div>
+                    <div class="panel-body">
+                        <ul class="navbar-nav mr-auto">
+                            &nbsp;<li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Категории <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    @foreach($categories as $category)
+                                        <li>{{$category->category}}</li>
+                                    @endforeach
+                                </ul>
 
-            <div class="col-lg-auto" >
-                {{--<h2>{{$category->question}}</h2>--}}
-                {{--@if ($categories->answer != null)--}}
-                  <h2 style="border-top:1px dashed #ccc;padding-top:10px;">Ответ: sdfsdfsd</h2>
-                {{--@endif--}}
-                {{--<form action="/questions/{{$question->id}}" method="post">--}}
-                    {{--<a href="/question/{{$question->id}}/edit" class="btn btn-primary">Редактировать</a>--}}
-                    {{csrf_field()}}
-                    {!! method_field('delete') !!}
-                    {{--<button type="submit" class="btn btn-outline-primary">Удалить</button>--}}
-                    <hr>
-                </form>
+                        </ul>
+                        @if($questions->count() > 0)
+
+                            <table class="table">
+                                @foreach($questions as $question)
+                                @if ($question->publish = 1)
+                                    <tr>
+                                        <td><h4>{{ $question->question }}</h4></td>
+                                    </tr>
+                                    <tr>
+                                        <td > <strong style="color:blue;border-top: none;">Ответ:</strong> {{ $question->answer }}</td>
+                                    <tr style="border-bottom: 2px solid dimgray; ">
+                                        <td>{{$question->created_at }} |
+                                        {{$question->user_name}}</td>
+                                    </tr >
+                                @endif
+                                @endforeach
+
+                            </table>
+
+                        @else
+                            Нет Вопросов
+                        @endif
+                    </div>
+                </div>
             </div>
-
-        {{--@endforeach--}}
-    </div>
+        </div>
 
 @endsection
