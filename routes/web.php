@@ -11,6 +11,7 @@
 |
 */
   Route::get('/', 'PagesController@index');
+  Route::resource('guest', 'GuestController');
   Auth::routes();
 
   Route::group(['middleware' => 'auth'], function() {
