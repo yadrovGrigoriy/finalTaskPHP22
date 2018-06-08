@@ -1,6 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
+	&nbsp;<div class="container">
+
+		<p><a class="btn btn-primary" href="{{ route(  'questions.index') }}">Список Вопросов</a>
+			<a class="btn btn-primary" href="{{ route( 'categories.index') }}">Список Категорий</a>
+			<a class="btn btn-primary" href="{{ route(      'users.index') }}">Список Пользователей</a></p>
+		<p><a class="btn btn-primary" href="{{ route(     'users.create') }}">Добавить Пользователя</a>
+			<a class="btn btn-primary" href="{{ route('categories.create') }}">Добавить Категорию</a>
+			<a class="btn btn-primary" href="{{ route( 'questions.create') }}">Добавить Вопрос</a></p>
+
+
+	</div>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
@@ -21,21 +32,47 @@
 
 							<table class="table">
 								@foreach($questions as $question)
-										{{--@if(!empty($question->answer))--}}
-										<tr>
+										<tr style="border-top: 2px solid dimgray;">
 											<td><h4>{{ $question->question }}</h4></td>
 										</tr>
 										<tr>
-											<td>{{ $question->answer }}</td>
+											@foreach($categories as $category)
+										@if($question->category_id == $category->id)
+										<td><strong>Категория:</strong> {{ $category->category }}</td>
+											@endif
+											@endforeach
+										</tr>
+										@if($question->answer != null)
 										<tr>
-											<td>{{$question->created_at }}</td>
-											<td>{{$question->user_name}}</td>
+											<td> <strong>Ответ:</strong> {{ $question->answer }}
+
+											</td>
+										</tr>
+										@endif
+										<tr>
+											<td>{{$question->created_at }} |
+												{{$question->user_name}}</td>
+										</tr>
+										<tr>
+											<td>
+												Статус:
+												@if($question->publish == 1)
+													<span style="color:green;">Опубликовано</span>
+												@elseif ($question->answer == null)
+													 <span style="color:orange;">Ожидает ответа</span>
+												@else
+													<span style="color:red;">Скрыт</span>
+												@endif
+											</td>
 										</tr>
 
 										<tr>
 											<td>
 											<form action="{{ route('questions.destroy', $question->id) }}" method="POST">
 												<a type="button" class="btn btn-pri" href="{{ route('questions.edit', $question->id) }}">Редактировать</a>
+
+
+
 												{{ method_field('DELETE') }}
 												{{ csrf_field() }}
 												<button type="submit" class="btn btn-danger">Удалить</button>
@@ -43,7 +80,6 @@
 											</td>
 										</tr>
 								<br>
-									{{--@endif--}}
 								@endforeach
 
 							</table>
