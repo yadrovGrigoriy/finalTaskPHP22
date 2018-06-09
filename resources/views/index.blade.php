@@ -22,12 +22,12 @@
 
                             <table class="table">
                                 @foreach($questions as $question)
-                                @if ($question->publish = 1)
+                                @if ($question->publish != 0)
                                     <tr>
                                         <td><h4>{{ $question->question }}</h4></td>
                                     </tr>
                                     <tr>
-                                        <td > <strong style="color:blue;border-top: none;">Ответ:</strong> {{ $question->answer }}</td>
+                                        <td><strong style="color:blue;border-top: none;">Ответ:</strong> {{ $question->answer }}</td>
                                     <tr style="border-bottom: 2px solid dimgray; ">
                                         <td>{{$question->created_at }} |
                                         {{$question->user_name}}</td>
