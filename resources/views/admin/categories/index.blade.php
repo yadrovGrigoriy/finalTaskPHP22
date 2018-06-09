@@ -23,13 +23,17 @@
 								<tr>
 									<th>Категория</th>
 									<th>Колличество вопросов </th>
-									{{--<th>Обупликованные Вопросы</th>--}}
+									<th>Опубликованные Вопросы</th>
+									<th>Овжидает ответа</th>
 									<th>Действия </th>
 								</tr>
 								@foreach($categories as $category)
 									<tr>
-										<td>{{ $category->category }}</td>
+										<td><a href="{{ route('questions.show', $category->id) }}">{{$category->category}}</a></td>
 										<td>{{ $category->questions->count() }}</td>
+										<td>{{ $category->questions->where('publish', 1)->count() }}</td>
+										<td><a href="{{ route('questions.show', $category->id) }}">{{ $category->questions->where('answer', NULL)->count() }}</a></td>
+
 
 										@foreach($category->questions as $question)
 
