@@ -62,10 +62,33 @@ class QuestionsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id, $withoutAnswer = 0)
     {
-        //
+      $categories = Category::all();
+      if($withoutAnswer == 1){
+      $questions = Question::all()
+      ->where('category_id', '=', $id)
+      ->where('answer', null);
+      } else {
+        $questions = Question::all()
+          ->where('category_id', '=', $id);
+      }
+
+      return view('admin.questions.indexCategory', compact('questions', 'categories'));
     }
+//
+//    public function showWithoutAnswer($id)
+//    {
+//        $categories = Category::all();
+//        $questions = Question::all()
+//          ->where('category_id', '=', $id)
+//          ->where('answer','=', null);
+//
+//      return view('admin.questions.indexCategory', compact('questions', 'categories'));
+//    }
+
+
+
 
     /**
      * Show the form for editing the specified resource.
@@ -75,6 +98,7 @@ class QuestionsController extends Controller
      */
     public function edit(Question $question)
     {
+
         $categories = Category::all();
         return view('admin.questions.edit', compact('question','categories'));
     }
@@ -111,8 +135,7 @@ class QuestionsController extends Controller
         return redirect()->route('questions.index');
     }
 
-    public function sortByCategory(Category $category, Question $questions)
-    {
-      //
-    }
+
+
+
 }
