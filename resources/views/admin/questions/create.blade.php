@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@include('layouts.error')
 @section('content')
     <div class="container">
         <div class="row">
@@ -28,7 +28,8 @@
 
         <div class="form-group">
 
-            <label>Email: <input class="form-control" type="text" required name="user_email" ></label>
+            <label>Email: <input class="form-control"  type="text" required name="user_email" ></label>
+
         </div>
 
         <div class="form-group">

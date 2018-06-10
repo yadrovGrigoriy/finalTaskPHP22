@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+@include('layouts.error')
 @section('content')
     <div class="container">
         <div class="row">
@@ -40,9 +40,9 @@
 
                         <label>Ответ : <input class="form-control" type="text"  name="answer" value="{{ $question->answer }}"></label>
 
-                        <label>Опубликовать: <input class="btn btn-group-justified" type="checkbox" value="1"  name="publish"></label>
+                        <label>Опубликовать: <input class="btn btn-group-justified" type="radio"  value="1"  name="publish"></label>
 
-                        <label>Скрыть: <input class="btn btn-group-justified" type="checkbox" value="0"  name="publish"></label>
+                        <label>Скрыть: <input class="btn btn-group-justified" type="radio"  value="0"  name="publish"></label>
 
 
                     </div>

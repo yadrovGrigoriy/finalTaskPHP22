@@ -1,16 +1,21 @@
 @extends('layouts.app')
-
+@include('layouts.error')
 @section('content')
 	&nbsp;<div class="container">
-
-		<p><a class="btn btn-primary" href="{{ route(  'questions.index') }}">Список Вопросов</a>
-			<a class="btn btn-primary" href="{{ route( 'categories.index') }}">Список Категорий</a>
-			<a class="btn btn-primary" href="{{ route(      'users.index') }}">Список Пользователей</a></p>
-		<p><a class="btn btn-primary" href="{{ route(     'users.create') }}">Добавить Пользователя</a>
-			<a class="btn btn-primary" href="{{ route('categories.create') }}">Добавить Категорию</a>
-			<a class="btn btn-primary" href="{{ route( 'questions.create') }}">Добавить Вопрос</a></p>
-
-
+		<div class="row">
+		<div class="col-md-2 col-sm-4 ">
+			<a class="btn btn-primary" href="{{ route(  'questions.index') }}">Список Вопросов</a>
+			<a class="btn btn-secondary" href="{{ route( 'questions.create') }}">Добавить Вопрос</a>
+		</div>
+		<div class="col-md-2 col-sm-4">
+			<a class="btn btn-primary" href="{{ route( 'categories.index') }}">Список Категорий </a>
+			<a class="btn btn-secondary " href="{{ route('categories.create') }}">Добавить Категорию</a>
+		</div>
+		<div class="col-md-2 col-sm-6">
+		<a class="btn btn-primary" href="{{ route(      'users.index') }}">Список Пользователей</a>
+		<a class="btn btn-secondary" href="{{ route(     'users.create') }}">Добавить Пользователя</a>
+		</div>
+		</div>
 	</div>
 	<div class="container">
 		<div class="row">
@@ -18,16 +23,20 @@
 				<div class="panel panel-default">
 					<div class="panel-heading"></div>
 					<div class="panel-body">
-						<ul class="navbar-nav mr-auto">
-							&nbsp;<li class="dropdown">
-							 	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Категории <b class="caret"></b></a>
-									<ul class="dropdown-menu">
-										@foreach($categories as $category)
-											<li>{{$category->category}}</li>
-										@endforeach
-									</ul>
+						{{--<ul class="navbar-nav mr-auto">--}}
+							{{--&nbsp;<li class="dropdown">--}}
+							 	{{--<a href="#" class="dropdown-toggle" data-toggle="dropdown">Категории <b class="caret"></b></a>--}}
+									{{--<ul class="dropdown-menu">--}}
+					<div class="col-form-label-lg">Категории:
 
-						</ul>
+						@foreach($categories as $category)
+
+							<a href="{{ route('questions.show', $category->id) }}">{{$category->category}}</a> |
+						@endforeach
+					</div>
+									{{--</ul>--}}
+
+						{{--</ul>--}}
 						@if($questions->count() > 0)
 
 							<table class="table">
@@ -71,15 +80,12 @@
 											<form action="{{ route('questions.destroy', $question->id) }}" method="POST">
 												<a type="button" class="btn btn-pri" href="{{ route('questions.edit', $question->id) }}">Редактировать</a>
 
-
-
 												{{ method_field('DELETE') }}
 												{{ csrf_field() }}
 												<button type="submit" class="btn btn-danger">Удалить</button>
 											</form>
 											</td>
 										</tr>
-								<br>
 								@endforeach
 
 							</table>
@@ -93,3 +99,4 @@
 		</div>
 	</div>
 @endsection
+

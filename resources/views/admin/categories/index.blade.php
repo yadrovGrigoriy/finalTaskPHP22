@@ -1,22 +1,27 @@
 @extends('layouts.app')
-
+@include('layouts.error')
 @section('content')
 	&nbsp;<div class="container">
-
-		<p><a class="btn btn-primary" href="{{ route(  'questions.index') }}">Список Вопросов</a>
-			<a class="btn btn-primary" href="{{ route( 'categories.index') }}">Список Категорий</a>
-			<a class="btn btn-primary" href="{{ route(      'users.index') }}">Список Пользователей</a></p>
-		<p><a class="btn btn-primary" href="{{ route(     'users.create') }}">Добавить Пользователя</a>
-			<a class="btn btn-primary" href="{{ route('categories.create') }}">Добавить Категорию</a>
-			<a class="btn btn-primary" href="{{ route( 'questions.create') }}">Добавить Вопрос</a></p>
-
-
+		<div class="row">
+			<div class="col-md-2 col-sm-4 ">
+				<a class="btn btn-primary" href="{{ route(  'questions.index') }}">Список Вопросов</a>
+				<a class="btn btn-secondary" href="{{ route( 'questions.create') }}">Добавить Вопрос</a>
+			</div>
+			<div class="col-md-2 col-sm-4">
+				<a class="btn btn-primary" href="{{ route( 'categories.index') }}">Список Категорий </a>
+				<a class="btn btn-secondary " href="{{ route('categories.create') }}">Добавить Категорию</a>
+			</div>
+			<div class="col-md-2 col-sm-6">
+				<a class="btn btn-primary" href="{{ route(      'users.index') }}">Список Пользователей</a>
+				<a class="btn btn-secondary" href="{{ route(     'users.create') }}">Добавить Пользователя</a>
+			</div>
+		</div>
 	</div>
 	<div class="container">
 		<div class="row">
 			<div class="col-md-8 col-md-offset-2">
 				<div class="panel panel-default">
-					<div class="panel-heading">Категории</div>
+					<div class="panel-heading"></div>
 					<div class="panel-body">
 						@if($categories->count() > 0)
 							<table class="table">
@@ -32,7 +37,7 @@
 										<td><a href="{{ route('questions.show', $category->id) }}">{{$category->category}}</a></td>
 										<td>{{ $category->questions->count() }}</td>
 										<td>{{ $category->questions->where('publish', 1)->count() }}</td>
-										<td><a href="{{ route('questions.show', $category->id) }}">{{ $category->questions->where('answer', NULL)->count() }}</a></td>
+										<td>{{ $category->questions->where('answer', NULL)->count() }}</td>
 
 
 										@foreach($category->questions as $question)
