@@ -12,11 +12,26 @@ class GuestController extends Controller
     {
       $categories = Category::all();
       $questions = Question::all();
-      return view('index', compact( 'categories', 'questions'));
+      return view('guest.index', compact( 'categories', 'questions'));
     }
 
     public function create()
     {
-      return view('create');
+      $categories = Category::all();
+      return view('guest.create', compact('categories'));
     }
+
+  public function store(Request $request)
+  {
+    $this->validate($request,[
+      'user_name' => 'required',
+      'category_id',
+      'user_email' => 'required|max:255',
+      'question' => 'required',
+    ]);
+
+    Question::create($request->all());
+
+    return redirect()->route('guest.index');
+  }
 }
