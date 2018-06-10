@@ -17,6 +17,7 @@
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
 
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -24,26 +25,12 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a class="navbar-brand" href="{{route('questions.index') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                        &nbsp;<div class="container">
-                        <p><a class="btn btn-primary" href="{{ route(  'questions.index') }}">Список Вопросов</a></p>
-                        <p><a class="btn btn-primary" href="{{ route( 'categories.index') }}">Список Категорий</a></p>
-                        <p><a class="btn btn-primary" href="{{ route(      'users.index') }}">Список Пользователей</a></p>
-                        <p><a class="btn btn-primary" href="{{ route(     'users.create') }}">Добавить Пользователя</a></p>
-                        <p><a class="btn btn-primary" href="{{ route('categories.create') }}">Добавить Категорию</a></p>
-                        <p><a class="btn btn-primary" href="{{ route( 'questions.create') }}">Добавить Вопрос</a></p>
-
-
-
-                    </div>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
@@ -71,8 +58,9 @@
                         @endguest
                     </ul>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
+
 
         <main class="py-4">
             @yield('content')
