@@ -15,8 +15,6 @@ class PagesController extends Controller
 
   public function index()
   {
-    $categories = Category::all();
-    $questions = Question::all();
-    return view('index', compact( 'categories', 'questions'));
+   return redirect()->route('guest.index');
   }
 }
