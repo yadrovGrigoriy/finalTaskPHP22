@@ -46,7 +46,7 @@ class QuestionsController extends Controller
         $this->validate($request,[
             'user_name' => 'required',
             'category_id',
-            'user_email' => 'required',
+            'user_email' => 'required|',
             'question' => 'required',
 
           ]);
@@ -68,7 +68,8 @@ class QuestionsController extends Controller
       if($withoutAnswer == 1){
       $questions = Question::all()
       ->where('category_id', '=', $id)
-      ->where('answer', null);
+      ->where('answer','=', null)
+      ->orderBy('answer');
       } else {
         $questions = Question::all()
           ->where('category_id', '=', $id);
@@ -132,7 +133,7 @@ class QuestionsController extends Controller
     public function destroy(Question $question)
     {
         $question->delete();
-        return redirect()->route('questions.index');
+        return redirect()->back();
     }
 
 
