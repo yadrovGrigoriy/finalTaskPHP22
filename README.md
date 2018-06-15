@@ -21,11 +21,11 @@
  <h1>Установка</h1>
  
 
-Скопировать с GitHub  или сделать git clone https://github.com/yadrovGrigoriy/finalTaskPHP22.git
-Устaновить Composer https://getcomposer.org
-В Composer обновить зависимости:   comoser update 
-Переименовать .nav.example в .nav
-сгенерировать новый ключ php artisan key:generate
-Создать базу данных faq  и выполнить миграцию  или использовать вложеный dump 
-Вход в интерфейс Администратора Login: admin. Password:admin 
+Скопировать с GitHub  или сделать git clone https://github.com/yadrovGrigoriy/finalTaskPHP22.git<br>
+Устaновить Composer https://getcomposer.org <br>
+В Composer обновить зависимости:   comoser update <br> 
+Переименовать .nav.example в .nav<br>
+сгенерировать новый ключ php artisan key:generate <br>
+Создать базу данных faq  и выполнить миграцию  или использовать вложеный dump<br> 
+Вход в интерфейс Администратора Login: admin. Password:admin <br>
  [Dump базы](https://drive.google.com/open?id=1YGjKqg8CxSyq4uc7e6kLdshrMaoLDrZ9)
