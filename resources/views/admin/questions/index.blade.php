@@ -77,7 +77,7 @@
 
 										<tr>
 											<td>
-											<form action="{{ route('questions.destroy', $question->id) }}" method="POST">
+											<form action="{{ route('questions.destroy', $question->id, $category->id ) }}" method="POST">
 												<a type="button" class="btn btn-pri" href="{{ route('questions.edit', $question->id) }}">Редактировать</a>
 
 												{{ method_field('DELETE') }}

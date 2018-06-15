@@ -16,11 +16,11 @@ class CreateQuestionsTable extends Migration
         Schema::create('questions', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('category_id');
-            $table->boolean('publish');
-            $table->integer('user_name');
-            $table->integer('user_email');
+            $table->boolean('publish')->nullable();
+            $table->string('user_name');
+            $table->string('user_email');
             $table->text('question');
-            $table->text('answer');
+            $table->text('answer')->nullable();
             $table->timestamps();
         });
 

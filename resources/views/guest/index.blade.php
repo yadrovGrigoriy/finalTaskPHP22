@@ -43,7 +43,7 @@
 </header>
 			<div class="row">
 				<div class="center-block">
-					<a href="{{ route('guest.create') }}">Добавить Вопрос</a>
+					<a class="add-q" style="font-size: 25px;margin: 20px;" href="{{ route('guest.create') }}">Добавить Вопрос</a>
 				</div>
 			</div>
 <section class="cd-faq">
@@ -55,28 +55,37 @@
 	</ul> <!-- cd-faq-categories -->
 
 	<div class="cd-faq-items">
+
 		@foreach($categories as $category)
+			@if($category->questions->where('publish', 1)->count() > 0)
 			<ul id="{{ $category->category }}" class="cd-faq-group">
+
 				<li class="cd-faq-title"><h2>{{ $category->category }}</h2></li>
 				@foreach($questions as $question)
-					@if($question->category_id == $category->id)
-						<li>
-							<a class="cd-faq-trigger" href="#0">{{ $question->question }}</a>
-							<div class="cd-faq-content">
-								<p>{{ $question->answer }}</p>
-							</div> <!-- cd-faq-content -->
-						</li>
+
+						@if($question->category_id == $category->id)
+						@if($question->publish = 1)
+							<li>
+								<a class="cd-faq-trigger" href="#0">{{ $question->question }}</a>
+								<div class="cd-faq-content">
+									<p>{{ $question->answer }}</p>
+								</div> <!-- cd-faq-content -->
+							</li>
+						@endif
 					@endif
 				@endforeach
+
 			</ul> <!-- cd-faq-group -->
+			@endif
 		@endforeach
+
 
 
 	</div> <!-- cd-faq-items -->
 	<a href="#0" class="cd-close-panel">Close</a>
 </section> <!-- cd-faq -->
-<script src="js/jquery-2.1.1.js"></script>
-<script src="js/jquery.mobile.custom.min.js"></script>
-<script src="js/main.js"></script> <!-- Resource jQuery -->
+<script src="{{ asset('js/jquery-2.1.1.js') }}"></script>
+<script src="{{ asset('js/jquery.mobile.custom.min.js') }}"></script>
+<script src="{{ asset('js/main.js') }}"></script> <!-- Resource jQuery -->
 </body>
 </html>

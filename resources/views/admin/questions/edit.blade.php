@@ -20,7 +20,7 @@
                                 <select class="form-control"  required name="category_id">
 
                                     @foreach($categories as $category)
-                                        <option value="{{$category->id}}">{{$category->category}}</option>
+                                        <option  value="{{$category->id}}">{{ $category->category }}</option>
                                     @endforeach
 
                                 </select>

@@ -97,11 +97,11 @@ class QuestionsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Question $question)
+    public function edit(Question $question, Category $category)
     {
 
         $categories = Category::all();
-        return view('admin.questions.edit', compact('question','categories'));
+        return view('admin.questions.edit', compact('question','categories', $category));
     }
 
     /**
