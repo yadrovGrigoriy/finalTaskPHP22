@@ -11,7 +11,7 @@
  [Админка](https://drive.google.com/open?id=1BDjXcGessFPG26uiXJg9bMXwfdNkbcvf)
  <hr>
  
- [структура базы](https://drive.google.com/open?id=19rblzatupfuzS0fgt5Q2O9xDxlMoEMdy)
+ [структура базы](https://drive.google.com/open?id=1b0TSoyS7AOZEpr1nSMkSIvmCKTKL_Dk0)
  <hr>
  <h1>Требования </h1>
  
