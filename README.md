@@ -24,9 +24,9 @@
  
 
 Скопировать с GitHub  или сделать git clone https://github.com/yadrovGrigoriy/finalTaskPHP22.git<br>
-Установаить Composer <br>
-Установаить Laravel<br>
-В Composer обновить зависимости:   comoser update <br> 
+Установить Composer <br>
+Установить Laravel<br>
+В Composer обновить зависимости:   composer update <br> 
 Переименовать .nav.example в .nav<br>
 сгенерировать новый ключ php artisan key:generate <br>
 Создать базу данных faq  и выполнить миграцию  или использовать вложеный dump<br> 
