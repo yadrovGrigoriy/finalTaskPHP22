@@ -15,10 +15,10 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-//      $questions = Question::all();
+      $questions = Question::all();
       $categories = Category::all();
 
-      return view('admin.categories.index', compact('categories' ));
+      return view('admin.categories.index', compact('categories', 'questions' ));
     }
 
     /**
@@ -96,7 +96,12 @@ class CategoriesController extends Controller
      */
     public function destroy(Category $category)
     {
+      $questions = Question::all()->where('category_id', '=', $category->id);
+      foreach ($questions as $question){
+        $question->delete();
+    }
       $category->delete();
+
       return redirect()->route('categories.index');
     }
 

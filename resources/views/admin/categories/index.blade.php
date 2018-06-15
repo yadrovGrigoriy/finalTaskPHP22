@@ -44,7 +44,7 @@
 
 										@endforeach
 										<td>
-											<form action="{{ route('categories.destroy', $category->id) }}" method="POST">
+											<form action="{{ route('categories.destroy', $category->id, $questions->where('category_id', '=', 'category')) }}" method="POST">
 												<a type="button" class="btn btn-pri" href="{{ route('categories.edit', $category->id) }}">Редактировать</a>
 												{{ method_field('DELETE') }}
 												{{ csrf_field() }}
