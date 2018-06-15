@@ -15,14 +15,17 @@
  <hr>
  <h1>Требования </h1>
  
- PHP 7.1.3 или выше;
- MySQL      
+ PHP 7.1.3 или выше<br>
+ MySQL<br>
+ Composer<br>
+ laravel      
  
  <h1>Установка</h1>
  
 
 Скопировать с GitHub  или сделать git clone https://github.com/yadrovGrigoriy/finalTaskPHP22.git<br>
-Устaновить Composer https://getcomposer.org <br>
+Установаить Composer <br>
+Установаить Laravel<br>
 В Composer обновить зависимости:   comoser update <br> 
 Переименовать .nav.example в .nav<br>
 сгенерировать новый ключ php artisan key:generate <br>
